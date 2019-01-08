@@ -203,6 +203,8 @@ public class VaricoloredSquaresModule : MonoBehaviour {
     private void GenerateRules() {
         MonoRandom rnd = RuleSeedable.GetRNG();
 
+        Debug.LogFormat(@"[VaricoloredSquares #{0}] Rule Generator: generating rules according to rule seed {1}", _moduleId, rnd.Seed);
+
         // Add more random spread
         for (int i = 0; i < 13; i++) {
             rnd.Next();
@@ -213,7 +215,7 @@ public class VaricoloredSquaresModule : MonoBehaviour {
         for (int i = 0; i < 5; i++) {
             _colorCandidates.Shuffle(rnd);
             _table[i] = _colorCandidates.ToArray();
-            Debug.LogFormat(@"<VaricoloredSquares #{0}> Rule Generator: {1} pentagon is: {2}", _moduleId, (SquareColor) i, string.Join("-", _table[i].Select(c => "RBGYM"[(int) c].ToString()).ToArray()));
+            Debug.LogFormat(@"[VaricoloredSquares #{0}] Rule Generator: {1} pentagon is: {2}", _moduleId, (SquareColor) i, string.Join("-", _table[i].Select(c => "RBGYM"[(int) c].ToString()).ToArray()));
         }
 
         // Random spread
@@ -224,9 +226,8 @@ public class VaricoloredSquaresModule : MonoBehaviour {
         // Generate directions
         _ruleOneDirection = (rnd.Next(2) * 2) - 1;
         _backupDirection = (rnd.Next(2) * 2) - 1;
-        Debug.LogFormat("@<VaricoloredSquares #{0}> Rule Generator: rule one direction is: {1}", _moduleId, _ruleOneDirection == -1 ? "counter-clockwise" : "clockwise");
-        Debug.LogFormat("@<VaricoloredSquares #{0}> Rule Generator: backup rule direction is: {1}", _moduleId, _backupDirection == -1 ? "counter-clockwise" : "clockwise");
-
+        Debug.LogFormat(@"[VaricoloredSquares #{0}] Rule Generator: rule one direction is: {1}", _moduleId, _ruleOneDirection == -1 ? "counter-clockwise" : "clockwise");
+        Debug.LogFormat(@"[VaricoloredSquares #{0}] Rule Generator: backup rule direction is: {1}", _moduleId, _backupDirection == -1 ? "counter-clockwise" : "clockwise");
     }
 
     private HashSet<int> CalculateNewAllowedPresses(int index) {
@@ -241,6 +242,8 @@ public class VaricoloredSquaresModule : MonoBehaviour {
         if ((index + 1) % 4 > index % 4 && index + 1 < 16) adjacentColors.Add(_colors[index + 1]);
 
         adjacentColors = adjacentColors.Distinct().OrderBy(c => Array.IndexOf(pentagon, c)).ToList();
+
+        Debug.LogFormat(@"[VaricoloredSquares #{0}] Adjacent colors to button #{1} are {2}", _moduleId, index, string.Join(", ", adjacentColors.Select(c => c.ToString()).ToArray()));
 
         int c0, c1;
         switch (adjacentColors.Count()) {
@@ -301,6 +304,8 @@ public class VaricoloredSquaresModule : MonoBehaviour {
                 _nextColor = pentagon[(Array.IndexOf(pentagon, _nextColor) + _backupDirection + 5) % 5];
             }
         } while (result.Count == 0);
+
+        Debug.LogFormat(@"[VaricoloredSquares #{0}] Allowed next button presses: {1}", _moduleId, string.Join(", ", result.Select(n => n.ToString()).ToArray()));
 
         return result;
     }

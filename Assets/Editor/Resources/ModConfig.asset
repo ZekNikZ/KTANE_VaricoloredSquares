@@ -17,13 +17,13 @@ MonoBehaviour:
     and conformity will naturally arise.
 
 
-    Module created and implemented by ZekNikZupon the foundation of Colored Squares
+    Module created and implemented by ZekNikZ upon the foundation of Colored Squares
     by Timwi. Sounds by LeGeND.
 
 
     [url=http://ktane.timwi.de/PDF/Varicolored%20Squares.pdf]Manual PDF[/url]
 
     [url=http://ktane.timwi.de/HTML/Varicolored%20Squares.html]Manual HTML[/url]'
-  version: 1.0
+  version: 1.2
   outputFolder: build
-  previewImage: {fileID: 2800000, guid: bd5c1f4881f57d54481b44e4c8a7779a, type: 3}
+  previewImage: {fileID: 2800000, guid: 4efa29afb796ebe458bc0caa231e9b66, type: 3}

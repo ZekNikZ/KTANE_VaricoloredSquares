@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 4efa29afb796ebe458bc0caa231e9b66
-timeCreated: 1546583316
+timeCreated: 1546623194
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -21,7 +21,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -58,7 +58,7 @@ TextureImporter:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
