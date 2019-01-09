@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Name: ModConfig
   m_EditorClassIdentifier: 
   id: VaricoloredSquares
-  title: Varicolored Squares
-  description: 'Conformity is key. Patterns encourage conformity. Find the pattern,
-    and conformity will naturally arise.
+  title: Varicolored Squares (Obsolete)
+  description: 'THIS MOD IS NOW OBSOLETE. FIND THE UPDATED VERSION HERE: [url=http://ktane.timwi.de/PDF/Varicolored%20Squares.pdf]New
+    Version[/url]
+
+
+    Conformity is key. Patterns encourage conformity. Find the pattern, and conformity
+    will naturally arise.
 
 
     Module created and implemented by ZekNikZ upon the foundation of Colored Squares
@@ -24,6 +28,6 @@ MonoBehaviour:
     [url=http://ktane.timwi.de/PDF/Varicolored%20Squares.pdf]Manual PDF[/url]
 
     [url=http://ktane.timwi.de/HTML/Varicolored%20Squares.html]Manual HTML[/url]'
-  version: 1.2
+  version: 1.3
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 4efa29afb796ebe458bc0caa231e9b66, type: 3}
